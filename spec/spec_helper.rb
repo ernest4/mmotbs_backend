@@ -7,8 +7,8 @@ Dir['./spec/shared_examples/**/*.rb'].sort.each { |f| require f } # set it and f
 WebMock.disable_net_connect!(
   :allow => [ # white list
     'localhost',
-    '127.0.0.1',
-  # '...', # wip. add endpoint for auth0 and google auth...
+    '127.0.0.1'
+    # '...', # wip. add endpoint for auth0 and google auth...
   ]
 )
 

@@ -46,6 +46,7 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     arel (9.0.0)
     ast (2.4.0)
+    bcrypt (3.1.13)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
     builder (3.2.4)
@@ -108,6 +109,7 @@ GEM
     puma (3.12.4)
     raabro (1.1.6)
     rack (2.2.2)
+    rack-cors (1.0.3)
     rack-protection (2.0.7)
       rack
     rack-test (1.1.0)
@@ -176,6 +178,8 @@ GEM
     ruby-progressbar (1.10.1)
     ruby_dep (1.5.0)
     safe_yaml (1.0.5)
+    shoulda-matchers (4.3.0)
+      activesupport (>= 4.2.0)
     sidekiq (6.0.3)
       connection_pool (>= 2.2.2)
       rack (>= 2.0.0)
@@ -212,6 +216,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
   byebug
   database_cleaner
@@ -221,11 +226,13 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
+  rack-cors
   rails (~> 5.2.4)
   rspec-rails
   rubocop (~> 0.82.0)
   rubocop-faker
   rubocop-rails
+  shoulda-matchers (~> 4.3.0)
   sidekiq
   sidekiq-cron (~> 1.1)
   spring

@@ -6,10 +6,12 @@
 
 # Read more: https://github.com/cyu/rack-cors
 
+# Rails.application.config.action_controller.forgery_protection_origin_check = false
+
 # Rails.application.config.middleware.insert_before 0, Rack::Cors do
 #   allow do
-#     origins 'example.com'
-#
+#     origins 'localhost:3000', 'example.com'
+
 #     resource '*',
 #       headers: :any,
 #       methods: [:get, :post, :put, :patch, :delete, :options, :head]
