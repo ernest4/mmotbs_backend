@@ -3,6 +3,39 @@
 require 'rails_helper'
 
 RSpec.describe 'Player API', :type => :request do
+
+  # TODO: try to be as 'http resourcful' as possible so you can extract all these specs into shared
+  # examples!
+
+  # TODO: try to encapsulate ALL of the standard CRUD endpoint specs into liner!
+  # it_behaves_like 'resource endpoint', '/player'
+
+  # nearly all access will need too be authenticated / authorized. so should be poossible...
+
+  describe "get /players" do
+    context "when player is logged in" do
+      # TODO: ...
+
+      it "returns all the players" do
+        # TODO: ....
+
+      end
+    end
+
+    context "when player is not logged in" do
+      # TODO: ....
+
+      it "returns Unauthorized" do
+        # TODO: ....
+      end
+    end
+  end
+
+  # other endpoints, show, create, update, destroy
+
+  
+
+  # example code from another app...
   # include RequestSpecHelper
   # include CommonUtils
 

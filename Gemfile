@@ -41,6 +41,11 @@ gem 'sidekiq-cron', '~> 1.1'
 # for making http requests within RAILS
 gem 'faraday'
 
+# JSON data preparation (fastest - 20 times fastor than JBuilder)
+gem 'fast_jsonapi'
+# JSON data serialization (fastest - 50 times faster than stdlib JSON)
+gem 'oj'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', :platforms => %i[mri mingw x64_mingw]

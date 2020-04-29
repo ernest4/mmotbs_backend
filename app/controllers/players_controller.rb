@@ -2,13 +2,14 @@
 
 class PlayersController < ApplicationController
   # before_action :set_player, :only => %i[show update destroy]
-  before_action :authenticate!
+  # before_action :authenticate!
 
   # GET /players
   def index
     players = Player.all
 
-    render :json => players
+    # render :json => players
+    render :json => PlayerSerializer.new(players, { :params => { :testy => 123 } }).serialized_json
   end
 
   # GET /players/1
