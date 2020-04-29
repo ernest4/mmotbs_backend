@@ -20,8 +20,4 @@ module ExceptionHandler
 end
 
 # provide exception for editing resources that don't belog to current user
-class Unauthorized < StandardError
-  def initialize(data)
-    @data = data
-  end
-end
+class Unauthorized < StandardError; end
