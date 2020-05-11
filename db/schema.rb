@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_29_125850) do
+ActiveRecord::Schema.define(version: 2020_05_07_211554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "maps", force: :cascade do |t|
+    t.string "name"
+    t.jsonb "tiles"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tiles"], name: "index_maps_on_tiles", using: :gin
+  end
 
   create_table "players", force: :cascade do |t|
     t.string "name"
@@ -24,6 +32,22 @@ ActiveRecord::Schema.define(version: 2020_04_29_125850) do
     t.string "email"
     t.index ["email"], name: "index_players_on_email"
     t.index ["name"], name: "index_players_on_name"
+  end
+
+  create_table "positions", force: :cascade do |t|
+    t.bigint "unit_id"
+    t.bigint "map_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["map_id"], name: "index_positions_on_map_id"
+    t.index ["unit_id"], name: "index_positions_on_unit_id"
+  end
+
+  create_table "units", force: :cascade do |t|
+    t.bigint "position_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["position_id"], name: "index_units_on_position_id"
   end
 
 end
